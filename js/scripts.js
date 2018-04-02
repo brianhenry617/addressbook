@@ -1,12 +1,13 @@
 // Business Logic
 
-function Person(first, last, phone, addresses, email){
+function Person(first, last, phone, address, email){
   this.firstName = first;
   this.lastName = last;
   this.phoneNumber = phone;
   this.addresses = [];
   this.email = email;
 }
+
 function Address(number, street, city, state, zip){
   this.number = number;
   this.street = street;
@@ -24,7 +25,7 @@ Address.prototype.fullAddress = function() {
 
 // User Logic
 $(document).ready(function() {
-  $("#newAddress").append('<div class="newAddress">' +
+  $(".show-address").append('<div class="newAddress">' +
                               '<div class="form-group">' +
                                 '<label for="number"> Number </label>' +
                                 '<input type="text" class="form-control number">' +
@@ -46,24 +47,28 @@ $(document).ready(function() {
                                  '<input type="text" class="form-control zip">' +
                                '</div>' +
                              '</div>');
-    });
-  $("form#newPerson").submit(function(event) {
+
+  $("form#personForm").submit(function(event) {
     event.preventDefault();
+    console.log("dsfjksjfkd");
 
     var inputFirst = $("input#first").val();
     var inputLast = $("input#last").val();
     var inputPhone = $("input#phone").val();
     var inputEmail = $("input#email").val();
-    var newPerson = new Person(inputFirst, inputLast, inputPhone, inputAddress, inputEmail);
 
-    var inputAddNumber = $(this).find("input.number").val();
-    var inputAddStreet = $(this).find("input.street").val();
-    var inputCity = $(this).find("input.city").val();
+    var inputAddNumber = $(this).find("input#addNum").val();
+    var inputAddStreet = $(this).find("input#addSt").val();
+    var inputCity = $(this).find("input#city").val();
     var inputState = $(this).find("input:radio[name=state]:checked").val();
-    var inputZip = $(this).find("input.zip").val();
+    var inputZip = $(this).find("input#zip").val();
     var newAddress = new Address(inputAddNumber, inputAddStreet, inputCity, inputState, inputZip);
+    console.log(newAddress);
 
-    Person.addresses.push(newAddress);
+    var newPerson = new Person(inputFirst, inputLast, inputPhone, newAddress, inputEmail);
+
+    console.log(newPerson);
+    newPerson.addresses.push(newAddress);
 
     $("ul#directory").append("<li><span class= 'person'>" + newPerson.fullName() +
     "</span></li>");
@@ -77,9 +82,9 @@ $(document).ready(function() {
       $("input#newLast").val("");
 
 
-    $("ul#addresses").text("");
-     newContact.addresses.forEach(function(address) {
-       $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
+    $("newAddress").text("");
+     newPerson.addresses.forEach(function(address) {
+       $("show-address").append("<li>" + address.fullAddress() + "</li>");
 
     });
   });

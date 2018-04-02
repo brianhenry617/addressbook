@@ -6,10 +6,6 @@ h1{
   background-color: darkgreen;
 }
 
-div #dirContents{
-  display: none;
-}
-
 ul .directory{
   display: none;
 }
