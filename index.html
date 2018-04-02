@@ -8,78 +8,100 @@
   <title>Address Book</title>
 </head>
 <body>
+  <div class="jumbotron jumbotron-flex">
+    <h1>Address Book</h1>
+  </div>
+
   <div class="container">
     <div class="row">
-      <form id="newContact" class="" action="index.html" method="post">
+      <form>
+
+      <div class="person">
         <label for="person"></label>
         <input type="text" name="first" placeholder="First Name">
         <input type="text" name="last" placeholder="Last Name">
         <input type="text" name="phone" placeholder="Phone">
         <input type="text" name="email" placeholder="Email">
+      </div>
 
-        <label for="number"></label>
-        <input type="number" name="number" placeholder="Address number">
-
-        <label for="street"></label>
-        <input type="text" name="street" placeholder="Address street">
-
-        <select class="form-control" id="city">
-        <option value="Washington"> Seattle </option>
-        <option value="Washington"> Spokane </option>
-        <option value="Washington"> Olympia </option>
-        <option value="Oregon"> Portland </option>
-        <option value="Oregon"> Eugene </option>
-        <option value="Oregon"> Medford </option>
-        <option value="California"> San Francisco </option>
-        <option value="California"> Los Angeles </option>
-        <option value="California"> Sacramento </option>
-        </select>
-
-        <div class="radio">
-          <label>
-            <input type="radio" name="State" value="Washington" checked>
-            Washington (WA)
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="State" value="Oregon" checked>
-            Oregon
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="State" value="California" checked>
-            California
-          </label>
+      <div class="newAddress">
+        <div class="form-group number">
+          <label for="number"></label>
+          <input type="number" name="number" placeholder="Address number" id= "addNum">
         </div>
 
-        <select class="form-control" id="zipcode">
-        <option value="Washington"> Washington </option>
-        <option value="Oregon"> Oregon </option>
-        <option value="California"> California </option>
-        </select>
+        <div class="form-group street">
+          <label for="street"></label>
+          <input type="text" name="street" placeholder="Address street" id="addSt">
+        </div>
 
+        <div class="form-group city">
+          <select class="form-control" id="city">
+          <option value="Washington"> Seattle </option>
+          <option value="Washington"> Spokane </option>
+          <option value="Washington"> Olympia </option>
+          <option value="Oregon"> Portland </option>
+          <option value="Oregon"> Eugene </option>
+          <option value="Oregon"> Medford </option>
+          <option value="California"> San Francisco </option>
+          <option value="California"> Los Angeles </option>
+          <option value="California"> Sacramento </option>
+          </select>
+        </div>
+
+        <div class= "form-group state">
+            <label>
+              <input type="radio" name="state" value="Washington" checked>
+              Washington (WA)
+            </label>
+
+            <label>
+              <input type="radio" name="state" value="Oregon" checked>
+              Oregon
+            </label>
+
+            <label>
+              <input type="radio" name="state" value="California" checked>
+              California
+            </label>
+        </div>
+
+
+        <div class="form-group zip">
+          <select class="form-control" id="zip">
+          <option value="Washington"> Washington </option>
+          <option value="Oregon"> Oregon </option>
+          <option value="California"> California </option>
+          </select>
+        </div>
+      </div>
+
+        <span class= "btn btn-success" id= "add-another-add"> Add another address </span>
         <button type="button" name="submit">Submit</button>
       </form>
+<!--end form-->
+
       <ul class="directory">
         <li><span class="person"></span></li>
       </ul>
 
-      <div class="col-md-4">
-        <div id= "show-person">
+      <div class="col-md-4" id="dirContents">
+        <div class= "show-person">
           <p><span class="first"> First Name: </span></p>
           <p><span class="last"> Last Name: </span></p>
         </div>
         <div class="more-info">
           <p><span class="phone"> Phone Number: </span></p>
-          <p><span class="address"> Address: </span></p>
-            <div class="">
-
-            </div>
-
           <p><span class="email"> Email: </span></p>
         </div>
+        <div class="show-address">
+          <p><span class="number"> House Number </span></p>
+          <p><span class="street"> Street Name </span></p>
+          <p><span class="city"> City </span></p>
+          <p><span class="state"> State </span></p>
+          <p><span class="zip"> Zip Code </span></p>
+        </div>
+      </div>
       </div>
     </div>
   </div>

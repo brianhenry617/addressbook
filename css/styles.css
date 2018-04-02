@@ -1,0 +1,15 @@
+h1{
+  text-align: center;
+}
+
+.jumbotron{
+  background-color: darkgreen;
+}
+
+div #dirContents{
+  display: none;
+}
+
+ul .directory{
+  display: none;
+}
