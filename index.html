@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Address Book</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <form id="newContact" class="" action="index.html" method="post">
+        <label for="person"></label>
+        <input type="text" name="first" placeholder="First Name">
+        <input type="text" name="last" placeholder="Last Name">
+        <input type="text" name="phone" placeholder="Phone">
+        <input type="text" name="email" placeholder="Email">
+
+        <label for="number"></label>
+        <input type="number" name="number" placeholder="Address number">
+
+        <label for="street"></label>
+        <input type="text" name="street" placeholder="Address street">
+
+        <select class="form-control" id="city">
+        <option value="Washington"> Seattle </option>
+        <option value="Washington"> Spokane </option>
+        <option value="Washington"> Olympia </option>
+        <option value="Oregon"> Portland </option>
+        <option value="Oregon"> Eugene </option>
+        <option value="Oregon"> Medford </option>
+        <option value="California"> San Francisco </option>
+        <option value="California"> Los Angeles </option>
+        <option value="California"> Sacramento </option>
+        </select>
+
+        <div class="radio">
+          <label>
+            <input type="radio" name="State" value="Washington" checked>
+            Washington (WA)
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="State" value="Oregon" checked>
+            Oregon
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="State" value="California" checked>
+            California
+          </label>
+        </div>
+
+        <select class="form-control" id="zipcode">
+        <option value="Washington"> Washington </option>
+        <option value="Oregon"> Oregon </option>
+        <option value="California"> California </option>
+        </select>
+
+        <button type="button" name="submit">Submit</button>
+      </form>
+      <ul class="directory">
+        <li><span class="person"></span></li>
+      </ul>
+
+      <div class="col-md-4">
+        <div id= "show-person">
+          <p><span class="first"> First Name: </span></p>
+          <p><span class="last"> Last Name: </span></p>
+        </div>
+        <div class="more-info">
+          <p><span class="phone"> Phone Number: </span></p>
+          <p><span class="address"> Address: </span></p>
+            <div class="">
+
+            </div>
+
+          <p><span class="email"> Email: </span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
